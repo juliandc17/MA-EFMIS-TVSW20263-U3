@@ -135,18 +135,23 @@ Escenario 6: Rechazar registro duplicado
 ```bash
 mvn clean compile
 ```
+*![alt text](image-1.png)*
 
 ### Ejecutar pruebas
 ```bash
 mvn clean test
 ```
-
+*![alt text](image-2.png)*
+*![alt text](image-3.png)*
 ### Generar reporte de cobertura JaCoCo
 ```bash
 mvn clean verify
 ```
-El reporte se genera en: `target/site/jacoco/index.html`
+*![alt text](image-4.png)*
+*![alt text](image-5.png)*
 
+El reporte se genera en: `target/site/jacoco/index.html`
+*![alt text](image-6.png)*
 ---
 
 ## Cobertura de código (JaCoCo)
