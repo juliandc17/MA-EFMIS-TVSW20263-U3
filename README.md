@@ -1,4 +1,4 @@
-# 🗳️ Taller TDD — Sistema de Registro de Votantes (Registraduría)
+# Taller TDD — Sistema de Registro de Votantes (Registraduría)
 
 > Proyecto de pruebas unitarias aplicando TDD, patrón AAA, clases de equivalencia, valores límite y BDD (Given–When–Then).
 
@@ -99,6 +99,8 @@ Escenario 1: Rechazar persona null
   Dado (Given)  que la referencia a la persona es null
   Cuando (When) intento registrarla
   Entonces (Then) el resultado debe ser INVALID
+
+  **
 
 Escenario 2: Rechazar persona fallecida
   Dado (Given)  que existe una persona con alive = false
