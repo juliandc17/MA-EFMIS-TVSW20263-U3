@@ -3,6 +3,9 @@ package edu.unisabana.tyvs.domain.service;
 import edu.unisabana.tyvs.domain.model.Person;
 import edu.unisabana.tyvs.domain.model.RegisterResult;
 
+import java.util.HashSet;
+import java.util.Set;
+
 public class Registry {
 
     // Edad mínima requerida para ejercer el derecho al voto
@@ -10,6 +13,9 @@ public class Registry {
 
     // Edad máxima biológicamente aceptada para el registro
     private static final int EDAD_MAXIMA = 120;
+
+    // Almacena los identificadores ya registrados para evitar duplicados
+    private final Set<Integer> idsRegistrados = new HashSet<>();
 
     public RegisterResult registerVoter(Person p) {
         // Validación defensiva: persona nula no puede registrarse
@@ -27,6 +33,11 @@ public class Registry {
         // Solo los mayores de edad pueden votar
         if (p.getAge() < EDAD_MINIMA_VOTO) return RegisterResult.UNDERAGE;
 
+        // No se permite registrar el mismo documento dos veces
+        if (idsRegistrados.contains(p.getId())) return RegisterResult.DUPLICATED;
+
+        // Registro exitoso: se guarda el id y se retorna VALID
+        idsRegistrados.add(p.getId());
         return RegisterResult.VALID;
     }
 }
