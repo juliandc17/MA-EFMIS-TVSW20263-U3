@@ -100,7 +100,6 @@ Escenario 1: Rechazar persona null
   Cuando (When) intento registrarla
   Entonces (Then) el resultado debe ser INVALID
 
-  **
 
 Escenario 2: Rechazar persona fallecida
   Dado (Given)  que existe una persona con alive = false
